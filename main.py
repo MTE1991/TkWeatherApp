@@ -40,15 +40,28 @@ class WeatherApp:
             'units': 'metric'
         }
 
-        response = requests.get(self.base_url, params=params)
-        data = response.json()
-
-        if response.status_code == 200:
+        try:
+            response = requests.get(self.base_url, params=params)
+            response.raise_for_status()  # Raises an HTTPError if the HTTP request returned an unsuccessful status code
+            data = response.json()
             self.display_weather(data)
-        else:
-            msg = 'City not found. Please enter a valid city name.'
+        except requests.exceptions.RequestException as e:
+            msg = f"Error fetching weather data: {str(e)}"
             messagebox.showerror('Error', msg)
             logging.error(msg + "\n")
+        except ValueError as e:
+            msg = f"Error decoding JSON: {str(e)}"
+            messagebox.showerror('Error', msg)
+            logging.error(msg + "\n")
+
+    def get_weather_button_click(self):
+        city = self.city_entry.get()
+        if city:
+            self.get_weather(city)
+        else:
+            msg = 'City name not entered!'
+            messagebox.showwarning('Warning!', msg)
+            logging.warning(msg + "\n")
 
     def display_weather(self, data):
         description = data['weather'][0]['description'].capitalize()
@@ -84,19 +97,11 @@ Pressure: {pressure} hPa\n
         logging.info("City: " + self.city_entry.get() + "\n" + result_text)
         self.result_label.config(text=result_text)
 
-    def get_weather_button_click(self):
-        city = self.city_entry.get()
-        if city:
-            self.get_weather(city)
-        else:
-            msg = 'City name not entered!'
-            messagebox.showwarning('Warning!', msg)
-            logging.warning(msg + "\n")
-
     def run(self):
         self.app.mainloop()
 
 if __name__ == "__main__":
-    api_key = "API_KEY"
+    api_key = "API_KEY" 
     weather_app = WeatherApp(api_key)
     weather_app.run()
+
