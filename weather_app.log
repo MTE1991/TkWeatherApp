@@ -1,0 +1,54 @@
+2023-12-04 21:49:32,456 - INFO - City: Dhaka
+
+Weather: Haze
+
+Temperature: 24.99°C
+
+Feels Like: 25.24°C
+
+Humidity: 65%
+
+Wind Speed: 1.54 m/s
+
+Wind Direction: 350°
+
+Sunrise: 2023-12-04 06:25:44
+
+Sunset: 2023-12-04 17:11:15
+
+Min. Temperature: 24.99°C
+
+Max. Temperature: 24.99°C
+
+Pressure: 1012 hPa
+
+        
+2023-12-04 21:49:38,243 - INFO - City: Delhi
+
+Weather: Smoke
+
+Temperature: 20.05°C
+
+Feels Like: 19.47°C
+
+Humidity: 52%
+
+Wind Speed: 1.54 m/s
+
+Wind Direction: 340°
+
+Sunrise: 2023-12-04 07:28:34
+
+Sunset: 2023-12-04 17:53:59
+
+Min. Temperature: 20.05°C
+
+Max. Temperature: 20.05°C
+
+Pressure: 1017 hPa
+
+        
+2023-12-04 21:49:43,454 - ERROR - City not found. Please enter a valid city name.
+
+2023-12-04 21:49:48,459 - WARNING - City name not entered!
+
