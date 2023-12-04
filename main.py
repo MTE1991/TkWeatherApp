@@ -12,7 +12,7 @@ except ImportError:
 class WeatherApp:
     def __init__(self, api_key):
         self.api_key = api_key
-        self.base_url = "http://api.openweathermap.org/data/2.5/weather"
+        self.base_url = "http://api.openweathermap.org/data/2.5/weather" # OpenWeatherMap API
 
         self.app = tk.Tk()
         self.app.title("Weather App")
