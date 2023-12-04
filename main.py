@@ -1,10 +1,13 @@
-import requests
-import tkinter as tk
-from tkinter import messagebox
-from datetime import datetime
-import pytz
-from tzlocal import get_localzone
-import logging
+try:
+    import requests
+    import tkinter as tk
+    from tkinter import messagebox
+    from datetime import datetime
+    import pytz
+    from tzlocal import get_localzone
+    import logging
+except ImportError:
+    print("Error while importing dependencies!")
 
 class WeatherApp:
     def __init__(self, api_key):
