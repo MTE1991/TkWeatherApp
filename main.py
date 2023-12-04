@@ -12,7 +12,7 @@ except ImportError:
 class WeatherApp:
     def __init__(self, api_key):
         self.api_key = api_key
-        self.base_url = "http://api.openweathermap.org/data/2.5/weather" # OpenWeatherMap API
+        self.base_url = "http://api.openweathermap.org/data/2.5/weather"
 
         self.app = tk.Tk()
         self.app.title("Weather App")
@@ -71,8 +71,9 @@ class WeatherApp:
         temperature = data['main']['temp']
         feels_like = data['main']['feels_like']
         humidity = data['main']['humidity']
-        wind_speed = data['wind']['speed']
+        wind_speed = round(data['wind']['speed'] * 3.6, 2) # kph
         wind_direction = data['wind']['deg']
+        visibility = data['visibility'] / 1000 #km
         sunrise_utc = data['sys']['sunrise']
         sunset_utc = data['sys']['sunset']
         min_temp = data['main']['temp_min']
@@ -88,13 +89,14 @@ class WeatherApp:
 Weather: {description}\n
 Temperature: {temperature}°C\n
 Feels Like: {feels_like}°C\n
-Humidity: {humidity}%\n
-Wind Speed: {wind_speed} m/s\n
-Wind Direction: {wind_direction}°\n
-Sunrise: {sunrise_local.strftime('%Y-%m-%d %H:%M:%S')}\n
-Sunset: {sunset_local.strftime('%Y-%m-%d %H:%M:%S')}\n
 Min. Temperature: {min_temp}°C\n
 Max. Temperature: {max_temp}°C\n
+Humidity: {humidity}%\n
+Wind Speed: {wind_speed} km/h\n
+Wind Direction: {wind_direction}°\n
+Visibility: {visibility} km\n
+Sunrise: {sunrise_local.strftime('%Y-%m-%d %H:%M:%S')}\n
+Sunset: {sunset_local.strftime('%Y-%m-%d %H:%M:%S')}\n
 Pressure: {pressure} hPa\n
         """
         logging.info("City: " + self.city_entry.get() + "\n" + result_text)
@@ -107,4 +109,3 @@ if __name__ == "__main__":
     api_key = "API_KEY" 
     weather_app = WeatherApp(api_key)
     weather_app.run()
-
