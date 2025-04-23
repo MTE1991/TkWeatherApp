@@ -1,5 +1,5 @@
 # TkWeatherApp
-**TkWeatherApp** is a desktop application built using Python's Tkinter library. It provides users with real-time weather information for any specified city. The application fetches data from a weather API and displays it in a user-friendly interface.
+**TkWeatherApp** is a desktop application built using Python's Tkinter library. It provides users with real-time weather information for any specified city. The application fetches data from a weather API and displays it in a user-friendly interface.
 
 ## Features
 - **Real-Time Weather Data**: Fetches current weather information for user-specified cities.
