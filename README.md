@@ -17,7 +17,7 @@
 ### Prerequisites
 - Python 3.x installed on your system.
 - Required Python libraries:
-  - `requests`
+  - `requests`
 
 ### Installation
 1. **Clone the Repository**:
