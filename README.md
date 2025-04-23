@@ -5,7 +5,7 @@
 - **Real-Time Weather Data**: Fetches current weather information for user-specified cities.
 - **User-Friendly Interface**: Simple and intuitive GUI built with Tkinter.
 - **Error Handling**: Logs errors and exceptions to a log file for troubleshooting.
-- **Custom Icon**: Includes a custom application icon (`icon.png`).
+- **Custom Icon**: Includes a custom application icon (`icon.png`).
 
 ## Technologies Used
 - **Programming Language**: Python
@@ -41,15 +41,15 @@
 1. Launch the application.
 2. Enter the name of the city you wish to get weather information for.
 3. Click the "Get Weather" button.
-4. The application will display the current weather details for the specified city.
+4. The application will display the current weather details for the specified city.
 
 ## Project Structure
 - `main.py`: Main application file containing the GUI and logic to fetch and display weather data.
 - `icon.png`: Custom icon for the application window.
-- `weather_app.log`: Log file that records errors and exceptions encountered during runtime.
+- `weather_app.log`: Log file that records errors and exceptions encountered during runtime.
 
 ## Contributing
-Contributions are welcome! If you'd like to enhance the functionality or fix issues, please fork the repository and submit a pull request.
+Contributions are welcome! If you'd like to enhance the functionality or fix issues, please fork the repository and submit a pull request.
 
 ## License
 This project is open-source and available under the [MIT License](LICENSE).
